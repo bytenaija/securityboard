@@ -1,0 +1,20 @@
+
+
+#map{
+    width: 100% !important; 
+    height: 400px !important;
+}
+
+.centered{
+	margin: 0 auto !important;
+}
+
+.bordered{
+	border: 1px solid black !important;
+	border-radius: 5px !important;
+	padding: 30px;
+}
+
+body{
+	background: black;
+}
