@@ -12,7 +12,7 @@
 */
 Route::get('/crimes/add', function () {
     return view('crimes.addcrime');
-});
+})->middleware("auth");
 
 Route::get('/', [ 'as' => 'home', function () {
     return view('index');
@@ -40,6 +40,12 @@ Route::post('/crimes/save',[
 Route::get('/crimes/{id}', [
 'uses'=>'CrimesController@getCrime',
   'as'=>'crime.get'
+ 
+]);
+
+Route::get('/crimes', [
+'uses'=>'CrimesController@index',
+  'as'=>'crime.all'
  
 ]);
 

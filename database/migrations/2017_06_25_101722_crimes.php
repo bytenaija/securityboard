@@ -17,15 +17,15 @@ class Crimes extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->string('happeningNow');
-            $table->date('date');
-            $table->time('time');
+            $table->date('eventdate');
             $table->string('address');
+             $table->string('streetaddress')->nullable();
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
             $table->float('longitude');
             $table->float('latitude');
             $table->string('type');
-            $table->string('policeReponse');
-            $table->string('details');
            $table->integer('user_id');
             $table->timestamps();
 

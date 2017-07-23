@@ -20,6 +20,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
   <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
+    
 
  
 
@@ -32,7 +34,12 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
       <link href="{{asset('css/map.css')}}" rel="stylesheet">
-    
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/build.css')}}">
+    <link href="{{asset('css/jquery-ui.min.css')}}" rel="stylesheet">
+     <link href="{{asset('css/jquery-ui.structure.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/jquery-ui.theme.min.css')}}" rel="stylesheet">
+
         
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
