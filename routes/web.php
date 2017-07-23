@@ -11,7 +11,7 @@
 |
 */
 Route::get('/crimes/add', function () {
-    return view('addcrime');
+    return view('crimes.addcrime');
 });
 
 Route::get('/', [ 'as' => 'home', function () {
@@ -32,7 +32,19 @@ Route::get('/logout', ['as' => 'logout', 'uses'=>'Auth\LoginController@logout'])
 
 
 
-Route::get('/crimes/{id}','CrimesController@getCrime');
+Route::post('/crimes/save',[
+'uses'=>'CrimesController@addCrime',
+ 'as'=>'crime.add'
+]);
+
+Route::get('/crimes/{id}', [
+'uses'=>'CrimesController@getCrime',
+  'as'=>'crime.get'
+ 
+]);
+
+
+
 Route::middleware('auth')->get('/crimes/edit/{id}','CrimesController@editCrime');
 
 

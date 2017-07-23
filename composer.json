@@ -1,6 +1,5 @@
 {
-<<<<<<< HEAD
-=======
+
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -54,5 +53,5 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
->>>>>>> bf5dceb54a78071ed51b573d3840d7848c2cb964
+
 }

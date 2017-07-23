@@ -25,7 +25,7 @@ public function crimeEntryForm(){
 
 
 
-public function saveCrime(Request $request){
+public function addCrime(Request $request){
 
 
 

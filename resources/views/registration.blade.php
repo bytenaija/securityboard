@@ -3,19 +3,12 @@
 
 @section('body')
 
-<h1>Register</h1>
+<h1 class="text-center">Register</h1>
       
-<div>
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 {{Form::model(['route'=>'registrationpost', 'method'=>'post'])}}
 
-<div class="form-group">
 
-    {{Form::label('name', 'Your full Name')}}
-
-    {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Your full name']) !!}
-  
-
-  </div>
 <div class="form-group">
 
     {{Form::label('email', 'E-Mail Address')}}
@@ -34,14 +27,7 @@
 
   </div>
 
-  <div class="form-group">
-
-    {{Form::label('phone', 'Phone number')}}
-
-    {!! Form::text('phone', $value = null, ['class' => 'form-control', 'placeholder' => 'Phone Number']) !!}
-  
-
-  </div>
+ 
 
   <div class="form-group">
 
@@ -51,16 +37,11 @@
   
 
   </div>
-<div class="form-group">
-
-    {{Form::label('address', 'Your Address')}}
-
-    {!! Form::textarea('address', $value = null, ['class' => 'form-control', 'placeholder' => 'Your Address']) !!}
-  
-
-  </div>
-    {!! Form::submit('Submit', ['class' => 'btn btn-lg btn-info pull-right'] ) !!}
+<div class="text-center">
+   {!! Form::submit('Submit', ['class' => 'btn btn-lg btn-info'] ) !!}
 {{Form::close()}}
+  </div>
+   
 </div>
 
 @endsection

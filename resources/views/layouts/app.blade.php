@@ -27,6 +27,7 @@
  
 
     <script src="{{asset('js/maps.js')}}"></script>
+    <script src="{{asset('js/places.js')}}"></script>
     <script src="{{asset('js/geo.js')}}"></script>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -55,8 +56,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="{{url('/')}}">Home</a></li>
+            <li><a href="#about">Enter Incidents</a></li>
             <li><a href="#contact">Contact</a></li>
             
           </ul>
@@ -64,52 +65,20 @@
           <ul class="nav navbar-nav navbar-right">
 
             @if(Auth::check())
+            <li><a href="{{url('user/dashboard')}}">Dashboard</a></li>
             <li><a href="{{url('logout')}}">Logout</a></li>
             @else
             <li><a href="{{url('registration')}}">Register</a></li>
             <li><a href="{{url('login')}}">Login</a></li>
            @endif
           </ul>
-          <form class="navbar-form navbar-right" role="search">
-
-      <div class="form-group">
-
-        <input type="text" class="form-control" placeholder="Search">
-
-      </div>
-
-      <button type="submit" class="btn btn-default">Submit</button>
-
-    </form>
+         
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-<header class="intro-header" style="background-image: url('')">
+  
 
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-                    <div class="site-heading">
-
-                        <h1>Clean Blog</h1>
-
-                        <hr class="small">
-
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
-    <div class="container" style="width:100% !important;">
+    <div class="container" style="width:100% !important; position:relative; top:100px">
 
       @yield("body")
 

@@ -17,4 +17,12 @@
 
 body{
 	background: black;
+	color:white;
+}
+
+nav {
+	margin-bottom: 20px!important
+}
+.site-heading{
+	height: 150px;
 }

@@ -13,7 +13,7 @@ class Crimes extends Migration
      */
     public function up()
     {
-        Schema::create('crimes', function($table){
+        Schema::create('crimes', function(Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('description');
@@ -26,6 +26,7 @@ class Crimes extends Migration
             $table->string('type');
             $table->string('policeReponse');
             $table->string('details');
+           $table->integer('user_id');
             $table->timestamps();
 
         });
