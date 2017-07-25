@@ -50,6 +50,12 @@ Route::get('/crimes', [
 ]);
 
 
+Route::get('/user/{id}', [
+'uses'=>'UsersController@getUser',
+  'as'=>'user.get'
+ 
+]);
+
 
 Route::middleware('auth')->get('/crimes/edit/{id}','CrimesController@editCrime');
 

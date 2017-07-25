@@ -19,3 +19,12 @@
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;   
 }
+
+.panel img{
+  width: 90%;
+  height:70%;
+}
+
+.ui-datepicker-title select{
+  color: black;
+}

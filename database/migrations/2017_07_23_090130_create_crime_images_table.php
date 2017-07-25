@@ -15,9 +15,9 @@ class CreateCrimeImagesTable extends Migration
     {
         Schema::create('crime_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('path');
+            $table->string('imagepath');
             $table->integer('crime_id')->unsigned();
-            $table->foreign('crime_id')->references('id')->on('crimes');
+            $table->foreign('crime_id')->references('id')->on('crimes')->onDelete('cascade');;
             $table->timestamps();
         });
     }

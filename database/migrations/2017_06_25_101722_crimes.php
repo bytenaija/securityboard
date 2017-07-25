@@ -16,8 +16,8 @@ class Crimes extends Migration
         Schema::create('crimes', function(Blueprint $table){
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
-            $table->date('eventdate');
+            $table->text('description');
+            $table->string('eventdate');
             $table->string('address');
              $table->string('streetaddress')->nullable();
             $table->string('city');

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 use Illuminate\Http\Request;
 use App\Crime;
 use App\CrimeImage;
 use Auth;
-
+use View;
 class CrimesController extends Controller
 {
 	public function __construct(){
@@ -23,8 +25,9 @@ public function crimeEntryForm(){
 }
 
 	public function index(){
-
-	return view('crimes.index');
+	$crimes = Crime::with('images')->get();
+//dd($crimes);
+	return View::make('crimes.index', compact('crimes'));
 
 }
 
@@ -67,23 +70,33 @@ public function addCrime(Request $request){
 	if($crime->save()){
 		//dd($request);
 if($request->hasFile('images')){
+//
 	//dd($request);
 	foreach($request->images as $image){
+		
+		//dd($image);
 		$filename = $string = str_random(20);
 			$ext = $image->getClientOriginalExtension();
-		$filename = $filename . "." .$ext;
-	// dd($filename);
-			
-			$path =public_path("/images/crimes/");
-		if($image->move($path, $filename)){
-			$location = $path . $filename;
-	CrimeImage::create([
-			'crime_id' => 	$crime->id,
-			'path' => $location
-		]);
-	}
-	}
+		$filename = "/images/crimes/" . $filename . "." .$ext;
+		$path = "/public" . $filename;
+//dd($path);
+		//	dd(File::get($image));
+			Storage::disk('local')->put($path, File::get($image));
+		//dd(Storage::get($filename));
+		//dd($filename);
+/*	CrimeImage::create([
+			'imagepath' => $filename,
+			'crime_id' => 	$crime->id
+		
+		]); 
+		*/
+		$img = new CrimeImage();
+		
+		$img->imagepath = $filename;
+		$crime->images()->save($img);
 }
+}
+
 	return redirect('/crimes')->with("message", "You have successfully submitted this incident. Other users are very grateful to you for helping to keep them safe");
 
 	}

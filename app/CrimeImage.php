@@ -9,6 +9,6 @@ class CrimeImage extends Model
   protected $fillable = ['path', 'crime_id'];
   
    public function crime(){
-     return this.belongsTo('App\Crime');
+     return $this->belongsTo('App\Crime');
    }
 }
